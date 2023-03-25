@@ -1,0 +1,16 @@
+.title-home-same {
+  font-family: var(--font-McLaren);
+  letter-spacing: 0.08rem;
+}
+.home-title-todo {
+  font-family: var(--font-Quintessential);
+  text-shadow: 2px 2px 5px rgb(0, 0, 0);
+}
+.card-story-class-size {
+  width: 100%;
+}
+@media screen and (min-width: 1180px) {
+  .card-story-class-size {
+    max-width: 230px;
+  }
+}

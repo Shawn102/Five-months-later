@@ -1,0 +1,78 @@
+.profile-section {
+    background: linear-gradient(to left, rgb(68, 184, 230), rgb(42, 42, 235));
+    height: 250px;
+    padding: 0 90px;
+    /* margin-top: 30px; */
+  }
+  .profile-section > h2 {
+    text-align: center;
+    color: white;
+    padding: 20px 5px;
+    font-family: var(--font-Quintessential);
+    letter-spacing: 0.1rem;
+  }
+  
+  .box-container-model {
+    height: 200px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    margin-top: 40px;
+    border-radius: 10px;
+    box-shadow: -3px -3px 5px rgb(255, 255, 255), 3px 3px 5px rgb(0, 0, 0);
+    position: relative;
+  }
+  .avtar-personalinfo {
+    background: linear-gradient(to top, gold, red);
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 30px !important;
+    width: 55px !important;
+    height: 55px !important;
+    font-family: var(--font-Quintessential) !important;
+    box-shadow: -1px -1px 5px rgb(0, 0, 0), 1px 1px 5px rgb(255, 255, 255);
+  }
+  .h4-avatar {
+    text-align: center;
+    margin-top: -5px;
+    letter-spacing: 0.1rem;
+    color: white;
+  }
+  .last-name {
+    color: gold;
+  }
+  .personal-info-email-phone {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    color: white;
+    font-family: var(--font-Quintessential);
+    font-size: 20px;
+    text-align: center;
+  }
+  .h1-todos{
+    margin-top: 100px;
+  }
+  @media screen and (max-width: 767px) {
+    .profile-section {
+      padding: 0 25px;
+    }
+    .purchase-box {
+      padding: 0 25px;
+    }
+  }
+  @media screen and (max-width: 450px) {
+    .profile-section {
+      padding: 0 25px;
+    }
+    .box-container-model {
+        height: 230px;
+      }
+      .personal-info-email-phone-skeleton{
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 0 30px;
+    }
+}

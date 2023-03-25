@@ -1,0 +1,429 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=McLaren&family=Quintessential&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+:root {
+  --font-Quintessential: "Quintessential";
+  --font-McLaren: "McLaren";
+  --smooth-transition: all 0.3s ease;
+  --long-transition: all 0.4s ease;
+  --color-gold: goldenrod;
+}
+html,
+body {
+  background: url(./images/backgroundtodos.jpg) center/cover no-repeat;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+button {
+  cursor: pointer;
+}
+/* navbar style */
+nav {
+  background: rgb(251, 206, 93);
+}
+.center-loading{
+  min-height: 100vh;
+  width: 100vw;
+  display: grid;
+  place-items: center;
+}
+.center-loading>div>h1{
+  font-family: var(--font-Quintessential);
+  margin-top: 25px;
+  letter-spacing: 0.1rem;
+  color: white;
+  text-shadow: -3px -3px 5px black;
+}
+.App {
+  width: 100%;
+  /* max-width: 1440px; */
+  margin: 0 auto;
+}
+.responsive-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: sans-serif;
+  padding: 10px;
+  color: rgb(255, 255, 255);
+}
+.responsive-nav button {
+  background: transparent;
+  color: rgb(254, 254, 254);
+  border: none;
+  font-size: 25px;
+}
+.fivem-logo{
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  box-shadow: -1px -1px 10px 3px rgb(194, 2, 2);
+}
+.nav-links-container {
+  height: 0;
+  overflow: hidden;
+  transition: var(--smooth-transition);
+}
+ul {
+  list-style: none;
+  font-size: 25px;
+  /* margin-left: -30px; */
+  background: rgb(251, 206, 93);
+  font-family: var(--font-Quintessential);
+}
+.links {
+  text-decoration: none;
+  color: black;
+}
+ul li {
+  padding: 10px;
+  /* margin-left: -10px; */
+  cursor: pointer;
+  border-top: 2px solid rgb(212, 161, 33);
+  box-shadow: 0 10px 10px 1px rgb(133, 117, 16);
+  transition: var(--smooth-transition);
+}
+ul li:hover {
+  background: gray;
+}
+.links {
+  color: white;
+}
+/* Todos page style */
+/* .home-page-content {
+  background: url(./images/backgroundtodos.jpg) center/cover no-repeat;
+  min-height: 100vh;
+} */
+
+.home-page-content > h1 {
+  color: white;
+  text-shadow: 3px 3px 5px black;
+  text-align: center;
+  font-size: 45px;
+  font-family: var(--font-McLaren);
+  letter-spacing: 0.1rem;
+}
+.inside-content-map-place {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+  padding: 10px 0 40px 0;
+}
+.style-of-content {
+  position: relative;
+  width: 100%;
+  background: rgba(21, 21, 21, 0.5);
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgb(9, 9, 9), -3px -3px 5px rgb(255, 255, 255);
+  color: white;
+  text-align: center;
+  padding: 10px;
+  margin: 10px;
+  font-family: var(--font-Quintessential);
+  letter-spacing: 0.1rem;
+}
+.style-of-content h5 {
+  margin: 5px 0;
+}
+.style-of-content > p {
+  padding: 10px 0;
+}
+.buttons-todos-flex {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 5px 15px;
+}
+.section-edit {
+  position: fixed;
+  background: rgba(2, 137, 0, 0.8);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transform: translateX(110%);
+  transition: var(--long-transition);
+}
+.show-section-edit {
+  transform: translateX(0);
+}
+.button-ed-div {
+  max-width: 800px;
+  height: 80px;
+  position: relative;
+  margin: 0 auto;
+}
+.border-none-edit-b {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 35px;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+}
+
+/* pop up delete style */
+.popUpNotShowed {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+.del-button > p {
+  font-size: 20px;
+  font-family: var(--font-McLaren);
+  margin-bottom: 10px;
+}
+/* end of todos page */
+.single-page {
+  border: 2px solid white;
+  border-radius: 5px;
+  padding: 2px 15px;
+}
+.button-absolute {
+  color: rgb(252, 251, 251);
+  background: transparent;
+  border: 2px solid white;
+  font-size: 25px;
+  border-radius: 5px;
+  display: flex;
+  transition: var(--long-transition);
+}
+.single-page:hover,
+.button-absolute:hover {
+  background: rgb(255, 0, 0);
+  filter: brightness(90%);
+}
+/* end of Todos page style */
+/* Error page style */
+.imagebox {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+.imagebox img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.errorPageHeading {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.3);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  align-items: center;
+}
+.errorPageHeading > div {
+  text-align: center;
+  color: white;
+  font-family: var(--font-McLaren);
+  letter-spacing: 0.1rem;
+}
+.errorPageHeading div h1 {
+  font-size: 60px;
+}
+.errorPageHeading div h3 {
+  text-transform: uppercase;
+}
+.errorPageHeading div p {
+  margin-top: 40px;
+}
+.button-links {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+.fourZeroFour {
+  background: transparent;
+  color: rgb(255, 255, 255);
+  padding: 3px 25px;
+  border-radius: 5px;
+  font-size: 20px;
+  font-family: var(--font-Quintessential);
+  border: 2px solid rgb(255, 255, 255);
+}
+/* form page */
+.add-form {
+  height: 100%;
+  max-height: 100vh;
+  position: relative;
+}
+.add-form img {
+  height: 100vh;
+  width: 100%;
+  object-fit: cover;
+}
+.pos-form {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+.FormTodos {
+  width: 100%;
+  max-width: 500px;
+  padding: 10px;
+  margin: 10vh auto 0 auto;
+}
+.FormTodos h1 {
+  color: rgb(255, 255, 255);
+  text-shadow: 1px 3px 3px rgb(168, 168, 168);
+  text-align: center;
+  text-transform: capitalize;
+  font-family: var(--font-Quintessential);
+  letter-spacing: 0.1em;
+}
+.form-input-titDate {
+  display: flex;
+  justify-content: space-between;
+  /* flex-wrap: wrap; */
+}
+.form-input-titDate input {
+  width: 100%;
+  max-width: 230px;
+  margin: 5px;
+  padding: 10px;
+  outline: none;
+  border-radius: 5px;
+  background: rgba(125, 125, 125, 0.5);
+  font-size: 20px;
+  border: 2px solid rgb(255, 255, 255);
+}
+.form-input-titDate input:focus {
+  border: 2px solid rgb(169, 255, 78);
+  /* filter: brightness(90%); */
+  background: rgb(255, 255, 255);
+}
+.textArea {
+  width: 98%;
+  padding: 5px;
+  resize: none;
+  font-size: 20px;
+  outline: none;
+  background: rgba(39, 39, 39, 0.5);
+  border-radius: 5px;
+  border: 2px solid rgb(255, 255, 255);
+  margin: 5px 0 0 5px;
+  color: white;
+}
+::placeholder {
+  color: rgb(113, 255, 12);
+}
+.formButton {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+.formButton button {
+  background: transparent;
+  border: 3px solid rgb(255, 255, 255);
+  font-size: 20px;
+  padding: 5px 20px;
+  font-family: var(--font-McLaren);
+  border-radius: 5px;
+  color: rgb(255, 255, 255);
+  letter-spacing: 0.1rem;
+  box-shadow: -2px -2px 3px rgb(159, 159, 159), 2px 2px 3px rgb(182, 182, 182);
+}
+.hAbsolute {
+  color: white;
+  position: absolute;
+  height: 30vh;
+  width: 90vw;
+  top: 10%;
+  right: 50%;
+  background: rgba(0, 0, 0, 0.8);
+  border: 5px double rgb(255, 255, 255);
+  border-radius: 10px;
+  box-shadow: -3px -3px 5px rgb(227, 242, 206), 3px 3px 5px rgb(236, 237, 236);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: scale(0);
+  transition: var(--long-transition);
+}
+.showAddPopSuccess {
+  transform: translateX(50%) translateY(10%) scale(1);
+}
+.inside-success-add {
+  text-align: center;
+  font-family: var(--font-McLaren);
+}
+.inside-success-add p {
+  letter-spacing: 0.1rem;
+  margin: 5px;
+}
+.inside-success-add button {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  color: rgb(255, 255, 255);
+  background: transparent;
+  border: none;
+  font-size: 25px;
+}
+@media screen and (min-width: 767px) {
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+  }
+  .responsive-nav button {
+    display: none;
+  }
+  .nav-links-container {
+    height: auto !important;
+  }
+  ul {
+    display: flex;
+    margin-left: 0px;
+    padding: 10px;
+    background: none;
+  }
+  ul li {
+    margin-left: 0;
+    border: none;
+    box-shadow: none;
+  }
+  ul li:hover {
+    background: none;
+    color: rgb(255, 46, 46);
+    text-decoration: underline;
+  }
+  .hAbsolute {
+    height: 50vh;
+    width: 50vw;
+  }
+  /* todos page */
+  .inside-content-map-place {
+    min-width: 767px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  .style-of-content {
+    max-width: 350px;
+  }
+}
